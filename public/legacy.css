@@ -1,0 +1,339 @@
+body {
+  margin: 0;
+  background: #f5f7f4;
+  color: #25342d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#legacy-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 18px 30px;
+}
+
+.legacy-header {
+  display: block;
+  min-height: 56px;
+  padding-top: 19px;
+  border-bottom: 1px solid #e2e8e2;
+  font-size: 16px;
+}
+
+.legacy-status {
+  float: right;
+  padding: 6px 10px;
+  border: 1px solid #dbe8dd;
+  border-radius: 18px;
+  color: #4d7458;
+  font-size: 11px;
+}
+
+.legacy-status.offline {
+  border-color: #efdeda;
+  color: #985548;
+}
+
+.legacy-main {
+  padding-top: 25px;
+}
+
+.legacy-eyebrow {
+  margin: 0 0 7px;
+  color: #65816e;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.legacy-main h1 {
+  margin: 0 0 9px;
+  color: #1e3027;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.legacy-main h2 {
+  margin: 0 0 15px;
+  font-size: 17px;
+}
+
+.legacy-intro {
+  margin: 0 0 21px;
+  color: #738078;
+  font-size: 13px;
+}
+
+.legacy-layout {
+  overflow: hidden;
+}
+
+.legacy-card {
+  margin-bottom: 15px;
+  padding: 18px;
+  border: 1px solid #e2e8e2;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.legacy-radio {
+  display: block;
+  padding: 10px 8px;
+  border-top: 1px solid #edf0ed;
+  font-size: 13px;
+}
+
+.legacy-radio input {
+  margin-right: 8px;
+}
+
+.legacy-choices {
+  margin: 5px 0 14px;
+  padding: 6px 10px;
+  border: 1px solid #e9eeea;
+  border-radius: 8px;
+  background: #fafcfa;
+}
+
+.legacy-choice,
+.legacy-device {
+  display: block;
+  min-height: 38px;
+  padding: 8px 0;
+  border-bottom: 1px solid #edf0ed;
+  font-size: 12px;
+}
+
+.legacy-choice input {
+  margin-right: 8px;
+}
+
+.legacy-avatar {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+  border-radius: 7px;
+  background: #eaf1eb;
+  color: #4d7357;
+  line-height: 25px;
+  text-align: center;
+}
+
+.legacy-device-copy {
+  display: inline-block;
+  max-width: 75%;
+  vertical-align: middle;
+}
+
+.legacy-device-copy strong,
+.legacy-device-copy small {
+  display: block;
+}
+
+.legacy-device-copy small,
+.legacy-muted {
+  color: #89948d;
+  font-size: 10px;
+}
+
+.legacy-muted {
+  line-height: 1.5;
+}
+
+.legacy-dot {
+  float: right;
+  width: 7px;
+  height: 7px;
+  margin: 9px 4px 0 0;
+  border-radius: 50%;
+  background: #c0c9c2;
+}
+
+.legacy-dot.online {
+  background: #58a276;
+}
+
+.legacy-upload {
+  margin-top: 16px;
+  padding: 20px 12px;
+  border: 1px dashed #b9cdbd;
+  border-radius: 9px;
+  background: #f8fbf8;
+  text-align: center;
+}
+
+.legacy-upload label,
+.legacy-upload label strong,
+.legacy-upload label small {
+  display: block;
+}
+
+.legacy-upload label strong {
+  margin-bottom: 5px;
+  color: #38483e;
+  font-size: 13px;
+}
+
+.legacy-upload label small {
+  margin-bottom: 10px;
+  color: #8a958e;
+  font-size: 10px;
+}
+
+.legacy-upload input {
+  max-width: 100%;
+  color: #58675e;
+  font-size: 11px;
+}
+
+.legacy-name-row {
+  overflow: hidden;
+}
+
+.legacy-name-row input {
+  width: 65%;
+  height: 31px;
+  padding: 0 8px;
+  border: 1px solid #e0e7e1;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.legacy-name-row button,
+.legacy-delete {
+  min-height: 32px;
+  margin-left: 5px;
+  padding: 0 10px;
+  border: 1px solid #c9ddce;
+  border-radius: 5px;
+  background: #f2f8f3;
+  color: #477254;
+  font-size: 11px;
+}
+
+.legacy-files ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legacy-file {
+  display: block;
+  min-height: 45px;
+  padding: 10px 0;
+  border-top: 1px solid #edf0ed;
+}
+
+.legacy-thumb,
+.legacy-file-icon {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  margin-right: 9px;
+  border-radius: 7px;
+  background: #f0f4f0;
+  color: #68776d;
+  vertical-align: middle;
+}
+
+.legacy-thumb {
+  object-fit: cover;
+}
+
+.legacy-file-icon {
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+}
+
+.legacy-file-info {
+  display: inline-block;
+  max-width: 65%;
+  vertical-align: middle;
+}
+
+.legacy-file-info a,
+.legacy-file-info small {
+  display: block;
+}
+
+.legacy-file-info a {
+  overflow: hidden;
+  color: #344239;
+  font-size: 12px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legacy-file-info small {
+  overflow: hidden;
+  margin-top: 3px;
+  color: #909a93;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legacy-file-info .legacy-audience {
+  color: #64816d;
+}
+
+.legacy-delete {
+  float: right;
+  border-color: #eee5e2;
+  background: #fff;
+  color: #966e65;
+}
+
+.legacy-empty {
+  padding: 20px 0;
+  color: #87938a;
+  font-size: 12px;
+  text-align: center;
+}
+
+.legacy-feedback {
+  margin: 12px 0 5px;
+  color: #5d7563;
+  font-size: 11px;
+}
+
+.legacy-progress {
+  height: 5px;
+  border-radius: 5px;
+  background: #e8eee9;
+}
+
+.legacy-progress span {
+  display: block;
+  height: 5px;
+  border-radius: 5px;
+  background: #4f9168;
+}
+
+@media (min-width: 720px) {
+  .legacy-layout {
+    display: table;
+    width: 100%;
+    border-spacing: 12px 0;
+    margin: 0 -12px 15px;
+  }
+
+  .legacy-layout .legacy-card {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 450px) {
+  .legacy-main h1 {
+    font-size: 25px;
+  }
+
+  .legacy-file-info {
+    max-width: 55%;
+  }
+}
