@@ -1,339 +1,126 @@
 body {
   margin: 0;
-  background: #f5f7f4;
-  color: #25342d;
+  background: #edf3f2;
+  background-image: radial-gradient(ellipse at 15% 0, #d5e9e4, transparent 60%), radial-gradient(ellipse at 100% 100%, #e3def0, transparent 55%);
+  color: #2d4140;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#legacy-app {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 18px 30px;
-}
-
-.legacy-header {
-  display: block;
-  min-height: 56px;
-  padding-top: 19px;
-  border-bottom: 1px solid #e2e8e2;
-  font-size: 16px;
-}
-
-.legacy-status {
-  float: right;
-  padding: 6px 10px;
-  border: 1px solid #dbe8dd;
-  border-radius: 18px;
-  color: #4d7458;
-  font-size: 11px;
-}
-
-.legacy-status.offline {
-  border-color: #efdeda;
-  color: #985548;
-}
-
-.legacy-main {
-  padding-top: 25px;
-}
-
-.legacy-eyebrow {
-  margin: 0 0 7px;
-  color: #65816e;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.legacy-main h1 {
-  margin: 0 0 9px;
-  color: #1e3027;
-  font-size: 30px;
-  line-height: 1.15;
-}
-
-.legacy-main h2 {
-  margin: 0 0 15px;
-  font-size: 17px;
-}
-
-.legacy-intro {
-  margin: 0 0 21px;
-  color: #738078;
-  font-size: 13px;
-}
-
-.legacy-layout {
-  overflow: hidden;
-}
-
+#root { min-height: 100vh; }
+.legacy-shell { max-width: 1120px; margin: 0 auto; padding: 0 18px 28px; }
+.legacy-top { min-height: 58px; padding-top: 19px; border-bottom: 1px solid rgba(255,255,255,.9); }
+.legacy-top > strong { color: #365a58; font-size: 19px; letter-spacing: -1px; }
+.legacy-top > strong span { color: #829c98; font-weight: normal; }
+.legacy-local { float: right; margin-top: 2px; padding: 6px 10px; border: 1px solid #d6e5df; border-radius: 16px; background: rgba(255,255,255,.55); color: #608578; font-size: 9px; font-weight: bold; }
+.legacy-account { float: right; margin: 0 12px 0 0; color: #6f8580; font-size: 10px; }
+.legacy-account button { margin-left: 8px; border: 0; background: transparent; color: #67837e; font-size: 10px; }
+.legacy-auth-content { max-width: 690px; margin: 42px auto; }
+.legacy-kicker { margin: 0 0 9px; color: #718c86; font-size: 9px; font-weight: bold; letter-spacing: 1px; }
+.legacy-auth-content h1 { margin: 13px 0; color: #2c4543; font-size: 49px; line-height: 1.04; letter-spacing: -2px; }
+.legacy-auth-content h1 em { color: #5f9188; font-style: normal; }
+.legacy-intro { max-width: 450px; margin: 0 0 22px; color: #758a86; font-size: 13px; line-height: 1.7; }
 .legacy-card {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   padding: 18px;
-  border: 1px solid #e2e8e2;
-  border-radius: 12px;
-  background: #fff;
+  border: 1px solid rgba(255,255,255,.94);
+  border-radius: 15px;
+  background: rgba(255,255,255,.68);
+  box-shadow: 0 12px 34px rgba(58,81,80,.08), inset 0 1px rgba(255,255,255,.9);
 }
-
-.legacy-radio {
+.legacy-card h2 { margin: 6px 0 14px; color: #405c59; font-size: 17px; }
+.legacy-login { max-width: 390px; padding: 21px; }
+.legacy-tabs { display: block; margin: 15px 0; padding: 3px; border: 1px solid #e1eae6; border-radius: 8px; background: #edf3f1; }
+.legacy-tabs button { width: 49%; height: 32px; border: 0; border-radius: 6px; background: transparent; color: #82928e; font-size: 10px; }
+.legacy-tabs button.active { background: white; color: #4e7771; font-weight: bold; }
+.legacy-login form label,
+.legacy-folder-form form > label { display: block; margin: 12px 0; color: #637a76; font-size: 10px; font-weight: bold; }
+.legacy-login input,
+.legacy-folder-form input[type="text"],
+.legacy-folder-form form > label input {
   display: block;
-  padding: 10px 8px;
-  border-top: 1px solid #edf0ed;
-  font-size: 13px;
-}
-
-.legacy-radio input {
-  margin-right: 8px;
-}
-
-.legacy-choices {
-  margin: 5px 0 14px;
-  padding: 6px 10px;
-  border: 1px solid #e9eeea;
-  border-radius: 8px;
-  background: #fafcfa;
-}
-
-.legacy-choice,
-.legacy-device {
-  display: block;
-  min-height: 38px;
-  padding: 8px 0;
-  border-bottom: 1px solid #edf0ed;
-  font-size: 12px;
-}
-
-.legacy-choice input {
-  margin-right: 8px;
-}
-
-.legacy-avatar {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin-right: 7px;
-  border-radius: 7px;
-  background: #eaf1eb;
-  color: #4d7357;
-  line-height: 25px;
-  text-align: center;
-}
-
-.legacy-device-copy {
-  display: inline-block;
-  max-width: 75%;
-  vertical-align: middle;
-}
-
-.legacy-device-copy strong,
-.legacy-device-copy small {
-  display: block;
-}
-
-.legacy-device-copy small,
-.legacy-muted {
-  color: #89948d;
-  font-size: 10px;
-}
-
-.legacy-muted {
-  line-height: 1.5;
-}
-
-.legacy-dot {
-  float: right;
-  width: 7px;
-  height: 7px;
-  margin: 9px 4px 0 0;
-  border-radius: 50%;
-  background: #c0c9c2;
-}
-
-.legacy-dot.online {
-  background: #58a276;
-}
-
-.legacy-upload {
-  margin-top: 16px;
-  padding: 20px 12px;
-  border: 1px dashed #b9cdbd;
-  border-radius: 9px;
-  background: #f8fbf8;
-  text-align: center;
-}
-
-.legacy-upload label,
-.legacy-upload label strong,
-.legacy-upload label small {
-  display: block;
-}
-
-.legacy-upload label strong {
-  margin-bottom: 5px;
-  color: #38483e;
-  font-size: 13px;
-}
-
-.legacy-upload label small {
-  margin-bottom: 10px;
-  color: #8a958e;
-  font-size: 10px;
-}
-
-.legacy-upload input {
-  max-width: 100%;
-  color: #58675e;
-  font-size: 11px;
-}
-
-.legacy-name-row {
-  overflow: hidden;
-}
-
-.legacy-name-row input {
-  width: 65%;
-  height: 31px;
-  padding: 0 8px;
-  border: 1px solid #e0e7e1;
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-.legacy-name-row button,
-.legacy-delete {
-  min-height: 32px;
-  margin-left: 5px;
+  width: 100%;
+  height: 39px;
+  margin-top: 6px;
   padding: 0 10px;
-  border: 1px solid #c9ddce;
-  border-radius: 5px;
-  background: #f2f8f3;
-  color: #477254;
-  font-size: 11px;
-}
-
-.legacy-files ul {
-  margin: 12px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.legacy-file {
-  display: block;
-  min-height: 45px;
-  padding: 10px 0;
-  border-top: 1px solid #edf0ed;
-}
-
-.legacy-thumb,
-.legacy-file-icon {
-  display: inline-block;
-  width: 38px;
-  height: 38px;
-  margin-right: 9px;
-  border-radius: 7px;
-  background: #f0f4f0;
-  color: #68776d;
-  vertical-align: middle;
-}
-
-.legacy-thumb {
-  object-fit: cover;
-}
-
-.legacy-file-icon {
-  font-size: 9px;
-  font-weight: bold;
-  line-height: 38px;
-  text-align: center;
-}
-
-.legacy-file-info {
-  display: inline-block;
-  max-width: 65%;
-  vertical-align: middle;
-}
-
-.legacy-file-info a,
-.legacy-file-info small {
-  display: block;
-}
-
-.legacy-file-info a {
-  overflow: hidden;
-  color: #344239;
+  border: 1px solid #dce7e3;
+  border-radius: 8px;
+  background: rgba(255,255,255,.8);
+  color: #385451;
   font-size: 12px;
+}
+.legacy-login input[type="password"] { width: 100%; }
+.legacy-primary {
+  min-height: 38px;
+  padding: 0 15px;
+  border: 1px solid #51857d;
+  border-radius: 8px;
+  background: #51857d;
+  color: white;
+  font-size: 10px;
   font-weight: bold;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
+.legacy-login .legacy-primary { width: 100%; margin-top: 7px; }
+.legacy-error { color: #a24f50; font-size: 10px; }
+.legacy-muted { color: #8b9b97; font-size: 10px; line-height: 1.6; }
+.legacy-footer { padding: 15px 0 4px; color: #90a09c; font-size: 9px; text-align: center; }
+.legacy-workspace { padding-top: 22px; }
+.legacy-welcome { display: block; min-height: 90px; }
+.legacy-welcome h1 { margin: 7px 0 5px; color: #385452; font-size: 27px; letter-spacing: -1px; }
+.legacy-welcome p:not(.legacy-kicker) { margin: 0 0 12px; color: #81928e; font-size: 10px; }
+.legacy-columns { overflow: hidden; }
+.legacy-sidebar { float: left; width: 220px; min-height: 240px; padding: 15px; }
+.legacy-folder { display: block; width: 100%; min-height: 47px; margin: 4px 0; padding: 6px; border: 1px solid transparent; border-radius: 8px; background: transparent; text-align: left; }
+.legacy-folder.selected { border-color: white; background: rgba(255,255,255,.84); }
+.legacy-folder-mark { display: inline-block; width: 27px; height: 27px; margin-right: 7px; border-radius: 8px; background: #e3f0eb; color: #58887e; font-size: 17px; line-height: 27px; text-align: center; vertical-align: middle; }
+.legacy-folder-copy { display: inline-block; max-width: 140px; vertical-align: middle; }
+.legacy-folder-copy strong,.legacy-folder-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legacy-folder-copy strong { color: #526b67; font-size: 10px; }
+.legacy-folder-copy small { margin-top: 4px; color: #95a39f; font-size: 8px; }
+.legacy-main-column { margin-left: 265px; }
+.legacy-folder-head { min-height: 80px; }
+.legacy-folder-head h2 { margin: 4px 0; font-size: 19px; }
+.legacy-folder-head p:not(.legacy-kicker) { display: inline-block; margin: 0 10px 0 0; color: #899a96; font-size: 9px; }
+.legacy-folder-head button { min-height: 29px; padding: 0 9px; border: 1px solid #d6e4df; border-radius: 7px; background: rgba(255,255,255,.7); color: #61817b; font-size: 9px; }
+.legacy-upload { padding: 15px; }
+.legacy-upload h2 { display: inline-block; margin: 0 13px 0 0; font-size: 13px; }
+.legacy-upload p { display: inline-block; color: #8b9a96; font-size: 9px; }
+.legacy-upload input { display: block; max-width: 100%; margin-top: 12px; color: #627976; font-size: 10px; }
+.legacy-progress { color: #4d8475 !important; }
+.legacy-list-heading { overflow: hidden; }
+.legacy-list-heading > div { float: left; }
+.legacy-list-heading h2 { margin: 4px 0; }
+.legacy-list-heading small { color: #98a6a2; font-size: 9px; }
+.legacy-list-heading > input { float: right; width: 130px; height: 30px; padding: 0 8px; border: 1px solid #dce7e3; border-radius: 7px; background: rgba(255,255,255,.7); font-size: 10px; }
+.legacy-file-list ul { margin: 12px 0 0; padding: 0; list-style: none; }
+.legacy-file { display: block; min-height: 47px; padding: 9px 0; border-top: 1px solid rgba(255,255,255,.9); }
+.legacy-file-mark { display: inline-block; width: 36px; height: 36px; margin-right: 9px; border: 1px solid white; border-radius: 8px; background: #e9f1ee; color: #698780; font-size: 8px; font-weight: bold; line-height: 36px; text-align: center; vertical-align: middle; }
+.legacy-file-copy { display: inline-block; max-width: 68%; vertical-align: middle; }
+.legacy-file-copy a { display: block; overflow: hidden; color: #4e6461; font-size: 10px; font-weight: bold; text-overflow: ellipsis; white-space: nowrap; }
+.legacy-file-copy small { display: block; margin-top: 4px; color: #98a5a1; font-size: 8px; }
+.legacy-delete { float: right; margin-top: 5px; border: 0; background: transparent; color: #a17670; font-size: 9px; }
+.legacy-notice { padding: 9px; border: 1px solid #d8e8df; border-radius: 8px; background: #f4fbf6; color: #58816b; font-size: 10px; }
+.legacy-folder-form { margin-bottom: 12px; }
+.legacy-people { max-height: 180px; overflow-y: auto; margin: 10px 0; border: 1px solid #e1e9e5; border-radius: 8px; background: rgba(255,255,255,.45); }
+.legacy-person { display: block; min-height: 43px; padding: 7px 9px; border-bottom: 1px solid #e9efec; color: #5d7470; font-size: 10px; }
+.legacy-person input { margin-right: 8px; }
+.legacy-person-avatar { display: inline-block; width: 25px; height: 25px; margin-right: 7px; border-radius: 7px; background: #e0eee8; color: #548079; line-height: 25px; text-align: center; vertical-align: middle; }
+.legacy-person > span:last-child { display: inline-block; vertical-align: middle; }
+.legacy-person strong,.legacy-person small { display: block; }
+.legacy-person small { margin-top: 3px; color: #97a49f; font-size: 8px; }
+.legacy-form-actions { text-align: right; }
+.legacy-form-actions button:not(.legacy-primary) { min-height: 34px; margin-left: 5px; padding: 0 10px; border: 1px solid #dce6e2; border-radius: 7px; background: rgba(255,255,255,.7); color: #718581; font-size: 9px; }
+.legacy-first-folder { min-height: 220px; text-align: center; }
+.legacy-first-folder p { color: #8b9b97; font-size: 10px; }
 
-.legacy-file-info small {
-  overflow: hidden;
-  margin-top: 3px;
-  color: #909a93;
-  font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.legacy-file-info .legacy-audience {
-  color: #64816d;
-}
-
-.legacy-delete {
-  float: right;
-  border-color: #eee5e2;
-  background: #fff;
-  color: #966e65;
-}
-
-.legacy-empty {
-  padding: 20px 0;
-  color: #87938a;
-  font-size: 12px;
-  text-align: center;
-}
-
-.legacy-feedback {
-  margin: 12px 0 5px;
-  color: #5d7563;
-  font-size: 11px;
-}
-
-.legacy-progress {
-  height: 5px;
-  border-radius: 5px;
-  background: #e8eee9;
-}
-
-.legacy-progress span {
-  display: block;
-  height: 5px;
-  border-radius: 5px;
-  background: #4f9168;
-}
-
-@media (min-width: 720px) {
-  .legacy-layout {
-    display: table;
-    width: 100%;
-    border-spacing: 12px 0;
-    margin: 0 -12px 15px;
-  }
-
-  .legacy-layout .legacy-card {
-    display: table-cell;
-    width: 50%;
-    vertical-align: top;
-  }
-}
-
-@media (max-width: 450px) {
-  .legacy-main h1 {
-    font-size: 25px;
-  }
-
-  .legacy-file-info {
-    max-width: 55%;
-  }
+@media (max-width: 680px) {
+  .legacy-auth-content { margin-top: 25px; }
+  .legacy-auth-content h1 { font-size: 39px; }
+  .legacy-login { max-width: none; }
+  .legacy-welcome h1 { font-size: 22px; }
+  .legacy-sidebar { float: none; width: auto; min-height: 0; margin-bottom: 12px; }
+  .legacy-folder { display: inline-block; width: 155px; vertical-align: top; }
+  .legacy-main-column { margin-left: 0; }
+  .legacy-account { margin-right: 3px; }
+  .legacy-account span { display: none; }
+  .legacy-upload h2,.legacy-upload p { display: block; margin: 4px 0; }
 }
